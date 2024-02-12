@@ -11,5 +11,7 @@ pre-commit install
 ```
 to install the git hooks.
 
+希望这鬼东西在你们电脑上能用
+
 ## Checklist
 - [ ] TBD
