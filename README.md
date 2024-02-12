@@ -9,7 +9,7 @@ Then run
 ```
 pre-commit install
 ```
-to install the git hooks. If you are using conda, you may need to commit and push through command line.
+to install the git hooks.
 
 ## Checklist
 - [ ] TBD
