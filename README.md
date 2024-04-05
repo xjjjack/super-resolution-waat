@@ -17,3 +17,10 @@ Super-Resolution
     <img src="figs/EMHA.png" width="960"> <br />
     <em> Efficient Transformer and Efficient Multi-Head Attention. </em>
 </p>
+
+# Deployment
+Language: Kotlin, JAVA
+
+Platform: Android
+
+Description: an Android application to deploy the model by using the .pt file. Now it can smoothly handle the image that size < 200*200.
