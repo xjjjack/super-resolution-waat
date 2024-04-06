@@ -3,6 +3,7 @@
 model we compared:
     Bicubic ++
     ESRT
+    FASRNet(ours)
     
 # ESRT
 Efficient Transformer for Single Image
