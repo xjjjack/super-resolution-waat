@@ -32,3 +32,7 @@ Super-Resolution
 
 <img width="370" alt="image" src="https://github.com/xjjjack/super-resolution-waat/assets/44899736/4af6aee8-83b6-42f6-bdd4-b117ceeb0ecd">
 
+## Comparison
+
+<img width="960" alt="image" src="figs/compare.png">
+<img width="960" alt="image" src="figs/datacompare.png">
