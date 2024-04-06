@@ -25,7 +25,9 @@ Super-Resolution
 
 * Platform: Android
 
-* Description: an Android application to deploy the model by using the .pt file. Now it can smoothly handle the image that size < 200*200 and compare the two images in the interface.
+* Description: an Android application to deploy the model by using the .pt file.
+*     For the ESRT model it could smoothly handle the image that size < 200*200 and compare the two images in the interface.
+*     The bicubic++ and the FASRNet could run all the images have lower resolution than 720p on the edge devices 
 
 ### Example:
 
