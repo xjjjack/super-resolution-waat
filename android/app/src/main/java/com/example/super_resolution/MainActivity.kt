@@ -1,5 +1,6 @@
 package com.example.super_resolution
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -8,6 +9,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import org.pytorch.IValue
 import org.pytorch.Module
@@ -21,6 +23,7 @@ import kotlin.math.ceil
 
 class MainActivity : AppCompatActivity() {
     private lateinit var customImageView: CustomImageView
+    private lateinit var selectedModelTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +34,12 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.buttonImage1).setOnClickListener {
             pickImage()
         }
+
+        selectedModelTextView = findViewById(R.id.selectedModelTextView)
     }
 
     private fun showModelSelectionDialog(bitmap: Bitmap) {
-        val models = arrayOf("bicubicpp", "esrt", "new model")
+        val models = arrayOf("Bicubic++", "ESRT", "FASRNet")
         AlertDialog.Builder(this)
             .setTitle("Select a Model")
             .setItems(models) { dialog, which ->
@@ -50,11 +55,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun useModel(bitmap: Bitmap, modelId: String) {
-        when (modelId) {
-            "A" -> runPtModule(bitmap, "bicubicpp.pt")
-            "B" -> runPtModule(bitmap, "esrt.pt")
-            "C" -> runPtModule(bitmap, "zsznbbest.pt")
+        val modelName = when(modelId){
+            "A" -> "bicubicpp"
+            "B" -> "esrt"
+            "C" -> "FASRNet"
+            else -> "bicubicpp"
         }
+        val Name = when(modelName){
+            "bicubicpp" -> "Bicubic++"
+            "esrt" -> "ESRT"
+            "FASRNet" -> "FASRNet"
+            else -> "Bicubic++"
+        }
+        val model = modelName + ".pt"
+        runPtModule(bitmap, model)
+        selectedModelTextView.text = "Selected Model: $Name"
     }
 
 
