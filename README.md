@@ -1,7 +1,8 @@
 ## Super Resolution on Edge device
 
-model we compared:
-    Bicubic ++
+Models we compared:
+
+    Bicubic++
     ESRT
     FASRNet(ours)
     
